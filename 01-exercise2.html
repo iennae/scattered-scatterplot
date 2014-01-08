@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Exercise 2</title>
+		<script type="text/javascript" src="d3.v3.js"></script>
+	</head>
+	<body>
+	
+	
+		<script type="text/javascript">
+		// build a rectangle
+		// big blue circle
+		// two little red circles 
+			var circle_radius = 25;
+			var cicle_base_center_y = 50;
+			var cicle_base_center_x = 200; 
+			var body = d3.select("body");
+		var svg = body.append("svg")
+						.attr("width", 400)
+						.attr("height", 250);
+			body.style("background-color", "black");
+			svg.style("background-color", "white");
+
+
+
+
+			svg.append("circle")
+				.attr("cx", 140)
+				.attr("cy", cicle_base_center_y)
+				.attr("r", circle_radius)
+				.attr("fill", "red");
+
+			svg.append("circle")
+				.attr("cx", 250)
+				.attr("cy", cicle_base_center_y)
+				.attr("r", circle_radius)
+				.attr("fill", "red");
+            svg.append("circle")
+				.attr("cx", 200)
+				.attr("cy", cicle_base_center_y + 100 )
+				.attr("r", circle_radius * 3 )
+				.attr("fill", "blue");
+		</script>
+	</body>
+</html>
