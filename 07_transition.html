@@ -81,9 +81,8 @@
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h);
-
-			svg.selectAll("circle")
-			   .data(dataset)
+            var myCircles = svg.selectAll("circle");
+			myCircles.data(dataset)
 			   .enter()
 			   .append("circle")
 			   .attr("cx", function(d, i) {
@@ -98,7 +97,17 @@
 			   })
 			   .attr("r", function(d) {
 				   return d.r;
-			   });
+			   })
+			   .attr("fill", function(d){
+			   	// this is buggy doesn't handle the > 255 right now. 
+			   	// wooh over time transistions color. 
+			   	   var red = d.x ;
+			   	   var green = d.y;
+			   	   var blue = d.r;
+			   	   var color_string = "rgb(" + red + "," + green + "," + blue + ")";
+			   	   return color_string;
+			   } );
+          // need to review delay 
 			
 		</script>
 	</body>

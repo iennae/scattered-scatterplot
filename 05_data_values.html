@@ -13,7 +13,32 @@
 			//
 
 			var numbers = [ 5, 10, 15, 20, 25 ];
-			
+			var dataset = [ 5, 10 , 20, 15, 18 ];
+			var w = 500;
+			var h = 200;
+
+
+
+			var svg = d3.select("body")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h);
+
+			d3.select("svg").selectAll("circle")
+			   .data(dataset)
+			   .enter()
+			   .append("circle");
+			   // select all the circles
+			   // set attribute to the datavalue
+			   // so radius size is associated to
+			   // data number 
+
+			d3.selectAll("circle")
+
+			   .attr("r", function(d){
+			   	   return d;
+			   });
+
 			d3.select("body").selectAll("h3")
 				.data(numbers)
 				.enter()
@@ -29,7 +54,8 @@
 			var animals = [ 
 				{ animal: "cat", type: "mammal" },
 				{ animal: "snake", type: "reptile" },
-				{ animal: "warbler", type: "bird" }
+				{ animal: "warbler", type: "bird" },
+				{ animal: "human", type: "mammal"}
 			];
 			
 			d3.select("body").selectAll("p")

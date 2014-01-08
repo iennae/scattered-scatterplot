@@ -18,12 +18,14 @@
 	</head>
 	<body>		
 		<script type="text/javascript">
-			
+			var circle_radius = 50;
+			var cicle_base_center_y = 140;
+			var cicle_base_center_x = 200; 
 			//Create SVG element
 			var svg = d3.select("body")
 						.append("svg")
-						.attr("width", 500)
-						.attr("height", 200);
+						.attr("width", 400)
+						.attr("height", 250);
 
 			svg.append("line")
 				.attr("x1", 10)
@@ -38,7 +40,7 @@
 				.attr("y1", 190)
 				.attr("x2", 400)
 				.attr("y2", 0)
-				.attr("stroke", "orange")
+				.attr("stroke", "teal")
 				.attr("stroke-width", 2);
 
 			svg.append("rect")
@@ -50,17 +52,21 @@
 
 			svg.append("circle")
 				.attr("cx", 300)
-				.attr("cy", 140)
-				.attr("r", 50)
+				.attr("cy", cicle_base_center_y)
+				.attr("r", circle_radius)
 				.attr("fill", "magenta");
-
+            svg.append("circle")
+				.attr("cx", 200)
+				.attr("cy", cicle_base_center_y )
+				.attr("r", circle_radius)
+				.attr("fill", "blue");
 			svg.append("text")
 				.attr("x", 250)
 				.attr("y", 100)
 				.attr("fill", "charcoal")
 				.attr("font-size", 36)
 				.attr("font-weight", "bold")
-				.text("Lorem ipsum");
+				.text("SVG with D3");
 			
 		</script>
 	</body>

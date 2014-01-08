@@ -20,8 +20,8 @@
 		<script type="text/javascript">
 
 			//Width and height
-			var w = 500;
-			var h = 100;
+			var w = 200;
+			var h = 300;
 			
 			var dataset = [
 							{
@@ -84,6 +84,7 @@
 			var yScale = d3.scale.linear()
 								 .domain([0, d3.max(dataset, function(d) { return d.y; })])
 								 .range([0, h]);
+
 
 			//Create SVG element
 			var svg = d3.select("body")

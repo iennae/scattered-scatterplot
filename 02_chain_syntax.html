@@ -8,7 +8,17 @@
 	<body>
 		<script type="text/javascript">
 
-			d3.select("body").append("p").text("New paragraph!");
+			var myBody = d3.select("body");
+
+			myBody.append("p").text("This is a paragraph!")
+			.append("p")
+			.text("This is another paragraph")
+			.append("h1")
+			.text("Just a heading");
+
+			myBody.append("h2")
+			.style("color", "pink")
+			.text("another smaller heading");
 			
 		</script>
 	</body>
